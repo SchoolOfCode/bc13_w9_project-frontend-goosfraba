@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 function InputForm(){
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const [priority, setPriority] = useState(3);
+    const [priority, setPriority] = useState(1);
 
     function handleChange(event){
         let newInputValue = event.target.value;
