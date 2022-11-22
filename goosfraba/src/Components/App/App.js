@@ -2,6 +2,9 @@ import "./App.css";
 import ListItems from "../List/list";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
+import React from 'react'
+import InputForm from '../User-input/InputForm';
+// import Todo from '../User-input/Todo';
 
 let list_data = [
   {
@@ -60,9 +63,13 @@ function App() {
   }
   console.log(listDataState);
 
+  
   return (
     <div className="App">
       <header className="App-header">
+       </header>
+      <body>
+      <InputForm />
         <table>
           {listDataState.map((list, index) => (
             <ListItems
@@ -84,9 +91,8 @@ function App() {
             />
           ))}
         </table>
-      </header>
+        </body>
     </div>
-  );
+  )
 }
-
 export default App;
