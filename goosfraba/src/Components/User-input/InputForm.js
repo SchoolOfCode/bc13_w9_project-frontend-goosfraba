@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 function InputForm(){
     const [todos, setTodos] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const [priority, setPriority] = useState();
+    const [priority, setPriority] = useState(3);
 
     function handleChange(event){
         let newInputValue = event.target.value;
@@ -21,8 +21,6 @@ function InputForm(){
         console.log("Priority", selectedPriority);
 
     }
-
-    // prioritySelector();
 
     function handleClick(){
         let addedTodo = inputValue;
@@ -56,25 +54,5 @@ console.log(todos);
         <Input todos={todos}/>
     </div>
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export default InputForm;
