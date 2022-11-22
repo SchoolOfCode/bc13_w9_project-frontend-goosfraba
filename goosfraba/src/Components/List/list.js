@@ -15,10 +15,12 @@ function ListItems({
   date_completed,
   due_date,
   handleDeleteClick,
+  handleDoneClick,
+  id,
 }) {
   return (
-    <div>
-      <li
+    <tr>
+      <td
         key={key}
         to_do_id={to_do_id}
         user_id={user_id}
@@ -27,11 +29,17 @@ function ListItems({
         date_created={date_created}
         date_completed={date_completed}
         due_date={due_date}
+        id={id}
       >
         {title}
-      </li>
-      <ListButtons handleDeleteClick={handleDeleteClick} to_do_id={to_do_id} />
-    </div>
+        <ListButtons
+          handleDeleteClick={handleDeleteClick}
+          to_do_id={to_do_id}
+          handleDoneClick={handleDoneClick}
+          id={id}
+        />
+      </td>
+    </tr>
   );
 }
 

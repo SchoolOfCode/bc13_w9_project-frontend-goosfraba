@@ -43,18 +43,28 @@ function App() {
   //handle delete function
   //needs to take an id
   function handleDeleteClick(index) {
-    console.log(listDataState)
+    console.log(index);
     setListDataState([
       ...listDataState.slice(0, index),
       ...listDataState.slice(index + 1),
     ]);
   }
-// Take a look at the delete buttons, only work from the bottom up
+  // Take a look at the delete buttons, only work from the bottom up
+
+  function handleDoneClick(index) {
+    setListDataState([
+      ...listDataState.slice(0, index),
+      { ...listDataState[index], done: !listDataState[index].done },
+      ...listDataState.slice(index + 1),
+    ]);
+  }
+  console.log(listDataState);
+
   return (
     <div className="App">
       <header className="App-header">
-        <ul>
-          {listDataState.map((list) => (
+        <table>
+          {listDataState.map((list, index) => (
             <ListItems
               // need to check this. Currently not working properly.
               //key={uuidv4()}
@@ -67,9 +77,13 @@ function App() {
               date_completed={list.date_completed}
               due_date={list.due_date}
               handleDeleteClick={handleDeleteClick}
+              handleDoneClick={handleDoneClick}
+              id={index}
+              //pass button text
+              //buttontext={buttontext}
             />
           ))}
-        </ul>
+        </table>
       </header>
     </div>
   );
