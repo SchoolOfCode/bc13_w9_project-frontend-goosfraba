@@ -30,7 +30,7 @@ function ListItems({
       >
         {title}
       </li>
-      <ListButtons />
+      <ListButtons handleDeleteClick={handleDeleteClick} to_do_id={to_do_id} />
     </div>
   );
 }

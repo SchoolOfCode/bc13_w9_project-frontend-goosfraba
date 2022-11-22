@@ -6,7 +6,7 @@ import { useState } from "react";
 let list_data = [
   {
     to_do_title: "Cut the grass",
-    to_do_id: 1, //primary key
+    to_do_id: 0, //primary key
     user_id: 100, //foreign key
     done: true,
     priority: 1,
@@ -16,7 +16,7 @@ let list_data = [
   },
   {
     to_do_title: "Get milk",
-    to_do_id: 2, //primary key
+    to_do_id: 1, //primary key
     user_id: 101, //foreign key
     done: false,
     priority: 2,
@@ -26,7 +26,7 @@ let list_data = [
   },
   {
     to_do_title: "Complete goosfraba",
-    to_do_id: 3, //primary key
+    to_do_id: 2, //primary key
     user_id: 103, //foreign key
     done: false,
     priority: 3,
@@ -43,17 +43,18 @@ function App() {
   //handle delete function
   //needs to take an id
   function handleDeleteClick(index) {
+    console.log(listDataState)
     setListDataState([
       ...listDataState.slice(0, index),
       ...listDataState.slice(index + 1),
     ]);
   }
-
+// Take a look at the delete buttons, only work from the bottom up
   return (
     <div className="App">
       <header className="App-header">
         <ul>
-          {list_data.map((list) => (
+          {listDataState.map((list) => (
             <ListItems
               // need to check this. Currently not working properly.
               //key={uuidv4()}
