@@ -1,49 +1,18 @@
-import React, { useState } from 'react'
-
-function Input({ addTodo }) {
-    const [todoItem, setTodoItem] = useState({
-        id: "",
-        task: "",
-        completed: false
-    });
-
-    function handleTaskInputChange(e) {
-        setTodoItem({ ...todoItem, task: e.target.value });
-
-    }
-
-    function handleClick(e) {
-        let newInput = e.target.value;
-
-        setTodoItem(newInput);
-        console.log(newInput)
-
-        console.log("Adding");
+import React from 'react'
+import Todo from './Todo';
 
 
 
-        e.target.value = "";
-        console.log("Clearing")
-
-    }
-
-
-
+function Input({ todos }){
     return (
-        <div>
-            <input
-                name="task"
-                type="text"
-                value={todo.task}
-                placeholder="Add To-Do"
-                onChange={handleTaskInputChange}></input>
-            <button type="submit">Search</button>
-            <div>
-            </div>
-        </div>
-
+        todos.map(todo => {
+            return <Todo key={todo.to_do_id} todo={todo} />
+        })
+        
     )
 }
+
+
 
 
 export default Input
