@@ -34,6 +34,7 @@ html {
   justify-content: space-evenly;
   display: flex;
   flex-direction: column;
+  
 }
 
 .body{
@@ -55,16 +56,18 @@ html {
 
 .title {
   display: flex;
-  text-decoration: underline;
+  
   color: white;
 }
 
 h1{
   position: relative;
-  top: -5vh;
+  top: -15vh;
   text-align: center;
   justify-content: center;
   font-size: 100px;
+  text-decoration: underline;
+  text-underline-offset: 35px;
 }
 
 .clean {
@@ -72,10 +75,12 @@ h1{
   justify-content: center;
   position: relative;
   text-align: center;
-  top: -5vh;
+  top: -15vh;
   text-align: center;
   font-size: 40px;
   padding-bottom: 20px;
+  padding-left: 15px;
+  letter-spacing: 22px;
 }
 
 .quote {

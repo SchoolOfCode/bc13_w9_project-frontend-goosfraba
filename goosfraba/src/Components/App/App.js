@@ -70,7 +70,7 @@ function App() {
       <header className="header">
         <h1 className="title">G o o s f r a b a</h1>
         <hr />
-        <p className="clean">Keeping Code Clean</p>
+        <p className="clean">keeping code clean</p>
       </header>
       <h3 className="quote">
         Lorem Ipsum is simply dummy text of the printing and typesetting
