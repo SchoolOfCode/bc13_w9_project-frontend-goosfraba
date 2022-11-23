@@ -1,0 +1,33 @@
+/* .container {
+  background-color: #324a5f;
+  width: 900px;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.items {
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: typewriter;
+  background-color: rgb(170, 170, 170);
+  height: 100px;
+  width: 90%;
+  border-radius: 70px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+}
+
+.listContainer {
+  background-color: #324a5f;
+  width: 900px;
+  height: 100px;
+}
