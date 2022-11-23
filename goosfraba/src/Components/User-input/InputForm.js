@@ -21,19 +21,21 @@ function InputForm({ list_data, list_data_state }) {
 
   function handleClick() {
     let addedTodo = inputValue;
-    list_data_state([
-      ...list_data,
-      {
-        to_do_id: uuidv4(), //primary key
-        to_do_title: addedTodo,
-        user_id: 103, //foreign key
-        done: false,
-        priority: priority,
-        date_created: 20221122,
-        date_completed: null,
-        due_date: 20221122,
-      },
-    ]);
+    if (inputValue !== "") {
+      list_data_state([
+        ...list_data,
+        {
+          to_do_id: uuidv4(), //primary key
+          to_do_title: addedTodo,
+          user_id: 103, //foreign key
+          done: false,
+          priority: priority,
+          date_created: 20221122,
+          date_completed: null,
+          due_date: 20221122,
+        },
+      ]);
+    }
   }
 
   return (
