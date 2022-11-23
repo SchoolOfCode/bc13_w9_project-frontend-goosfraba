@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.css"
 import ListItems from "../List/list";
 //import { v4 as uuidv4 } from "uuid";
 import { useState, useEffect } from "react";
@@ -6,6 +6,7 @@ import React from "react";
 import InputForm from "../User-input/InputForm";
 // import Todo from '../User-input/Todo';
 import QuoteGenerator from "../Quotes-generator/quote";
+
 
 function App() {
   //make a state
@@ -68,16 +69,18 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <QuoteGenerator />
+      <header className="header"><img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" /><span className="title">Goosfraba</span>
+        <p className="clean">Keeping Code Clean</p></header>
+        <QuoteGenerator />
       <body>
+
         <InputForm
           list_data={listDataState}
           list_data_state={setListDataState}
         />
         <table>
           {listDataState.map((list, index) => (
-            <ListItems
+            <ListItems className="listContainer"
               // need to check this. Currently not working properly.
               //key={uuidv4()}
               title={list.to_do_title}
@@ -91,8 +94,8 @@ function App() {
               handleDeleteClick={handleDeleteClick}
               handleDoneClick={handleDoneClick}
               id={index}
-              //pass button text
-              //buttontext={buttontext}
+            //pass button text
+            //buttontext={buttontext}
             />
           ))}
         </table>
