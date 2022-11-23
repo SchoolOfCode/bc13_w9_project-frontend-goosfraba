@@ -26,7 +26,13 @@
   right: 5px;
   top: 5px; 
   bottom: 5px;
-  margin: 5px;
+  margin: 15px;
+  box-shadow: 1px 1px 0px #505050,
+    2px 2px 0px #505050,
+    3px 3px 0px #505050,
+    4px 4px 0px #505050,
+    5px 5px 0px #505050,
+    6px 6px 0px #505050;
 }
 
 .listContainer {
