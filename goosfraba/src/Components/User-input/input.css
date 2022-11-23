@@ -1,40 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 div {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: typewriter;
   background-color: #0c1821;
 }
 
+.inputField {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 input {
   height: 70px;
-  width: 1000px;
-  position: relative;
-  top: 25%;
-  left: 25%;
+  width: 800px;
   font-size: 55px;
   font-family: typewriter;
+  border-radius: 6px;
+  position: relative;
+  left: 40px;
 }
 button {
-  border-radius: 10px;
-  position: relative;
-  top: 15px;
-  width: 300px;
+  border-radius: 6px;
+  width: 450px;
   height: 70px;
-  background-color: #ffffff;
+  position: relative;
+  right: 40px;
 }
 
 .dropdown {
-  position: relative;
   height: 70px;
-  width: 500px;
+  width: 450px;
   font-size: 55px;
   font-family: typewriter;
   font-size: 55px;
+  border-radius: 6px;
 }
 
 .add {
@@ -46,17 +51,17 @@ button {
   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
   box-sizing: border-box;
-  color: #36395a;
+  color: white;
   cursor: pointer;
   display: inline-flex;
   font-family: "JetBrains Mono", monospace;
-  height: 48px;
+  height: 70px;
   justify-content: center;
   line-height: 1;
   list-style: none;
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
+  /* padding-left: 16px;
+  padding-right: 16px; */
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -66,7 +71,7 @@ button {
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  font-size: 18px;
+  font-size: 50px;
 }
 
 .add:focus {

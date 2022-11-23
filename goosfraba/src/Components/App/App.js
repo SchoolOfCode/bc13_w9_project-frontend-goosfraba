@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.css"
 import ListItems from "../List/list";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
@@ -66,15 +66,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="header"><img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" /><span className="title">Goosfraba</span>
+        <p className="clean">Keeping Code Clean</p></header>
       <body>
+
         <InputForm
           list_data={listDataState}
           list_data_state={setListDataState}
         />
         <table>
           {listDataState.map((list, index) => (
-            <ListItems
+            <ListItems className="listContainer"
               // need to check this. Currently not working properly.
               //key={uuidv4()}
               title={list.to_do_title}

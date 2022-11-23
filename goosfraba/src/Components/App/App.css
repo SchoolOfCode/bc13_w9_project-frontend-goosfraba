@@ -2,15 +2,42 @@
   font-family: typewriter;
   src: url(TypeMachine.ttf);
 }
+* {
+  margin: 0;
+  padding: 0;
+}
 
 div {
   background-color: #0c1821;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center;
-    /* justify-content: center;  */
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: typewriter;
+}
+
+.header {
+  background-color: #0c1821;
+  text-align: left;
+  padding: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+}
+
+.title {
+  font-size: 200%;
+  position: relative;
+  left: 10px;
+  top: -70px;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+}
+
+.clean {
+  font-size: 80%;
+  position: relative;
+  left: 205px;
+  top: -120px;
 }
