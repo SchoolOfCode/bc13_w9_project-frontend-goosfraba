@@ -2,8 +2,8 @@ import "./App.css";
 import ListItems from "../List/list";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
-import React from 'react'
-import InputForm from '../User-input/InputForm';
+import React from "react";
+import InputForm from "../User-input/InputForm";
 // import Todo from '../User-input/Todo';
 
 let list_data = [
@@ -41,6 +41,7 @@ let list_data = [
 
 function App() {
   //make a state
+  //const [todos, setTodos] = useState([]);
   const [listDataState, setListDataState] = useState(list_data);
 
   //handle delete function
@@ -63,13 +64,14 @@ function App() {
   }
   console.log(listDataState);
 
-  
   return (
     <div className="App">
-      <header className="App-header">
-       </header>
+      <header className="App-header"></header>
       <body>
-      <InputForm />
+        <InputForm
+          list_data={listDataState}
+          list_data_state={setListDataState}
+        />
         <table>
           {listDataState.map((list, index) => (
             <ListItems
@@ -91,8 +93,8 @@ function App() {
             />
           ))}
         </table>
-        </body>
+      </body>
     </div>
-  )
+  );
 }
 export default App;
