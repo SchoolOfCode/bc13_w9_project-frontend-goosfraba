@@ -1,23 +1,26 @@
 // create list buttons functions
 // Need three buttons
+import "./listButtons.css"
+
 
 function ListButtons({ handleDeleteClick, to_do_id, handleDoneClick, id }) {
   return (
     <section>
-      <button
+
+      <button id="Buttons" className="editB"><img id="img" src="/Pictures/editButton.png" alt="edit Button" /></button>
+      <button id="Buttons" className="tickB"
+        onClick={() => {
+          handleDoneClick(to_do_id);
+        }}
+      ><img id="img" src="/Pictures/tickButton.png" alt="done Button" />
+
+      </button>
+      <button id="Buttons" className="delB"
         onClick={() => {
           handleDeleteClick(id);
         }}
       >
-        Delete Click
-      </button>
-      <button>Edit</button>
-      <button
-        onClick={() => {
-          handleDoneClick(to_do_id);
-        }}
-      >
-        Done
+        <img id="img" src="/Pictures/deleteButton.png" alt="delete Button" />
       </button>
     </section>
   );

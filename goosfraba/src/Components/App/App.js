@@ -13,9 +13,9 @@ let list_data = [
     user_id: 100, //foreign key
     done: true,
     priority: 1,
-    date_created: 20221011,
-    date_completed: 20220101,
-    due_date: 20220101,
+    // date_created: 20221011,
+    // date_completed: 20220101,
+    // due_date: 20220101,
   },
   {
     to_do_title: "Get milk",
@@ -23,9 +23,9 @@ let list_data = [
     user_id: 101, //foreign key
     done: false,
     priority: 2,
-    date_created: 20221011,
-    date_completed: null,
-    due_date: 20221209,
+    // date_created: 20221011,
+    // date_completed: null,
+    // due_date: 20221209,
   },
   {
     to_do_title: "Complete goosfraba",
@@ -33,9 +33,9 @@ let list_data = [
     user_id: 103, //foreign key
     done: false,
     priority: 3,
-    date_created: 20220510,
-    date_completed: null,
-    due_date: 20221212,
+    // date_created: 20220510,
+    // date_completed: null,
+    // due_date: 20221212,
   },
 ];
 
@@ -88,8 +88,8 @@ function App() {
               handleDeleteClick={handleDeleteClick}
               handleDoneClick={handleDoneClick}
               id={index}
-              //pass button text
-              //buttontext={buttontext}
+            //pass button text
+            //buttontext={buttontext}
             />
           ))}
         </table>
