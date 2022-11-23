@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import InputForm from "../User-input/InputForm";
 // import Todo from '../User-input/Todo';
+import QuoteGenerator from "../Quotes-generator/quote";
 
 function App() {
   //make a state
@@ -15,7 +16,7 @@ function App() {
   // hand the result to our listdatastate
   useEffect(() => {
     async function getToDos() {
-      const response = await fetch("http://localhost:3000/api/userToDos", {
+      const response = await fetch("http://localhost:3001/api/userToDos", {
         headers: { accept: "application/json" },
       });
       const data = await response.json();
@@ -27,22 +28,23 @@ function App() {
 
   //handle delete function
   //needs to take an id
-  function handleDeleteClick(index) {
+  function handleDeleteClick(index, id) {
     setListDataState([
       ...listDataState.slice(0, index),
       ...listDataState.slice(index + 1),
     ]);
-    // This deletes but index needs setting to the ID
-    // async function updateDelete(index) {
-    //   const response = await fetch(
-    //     `http://localhost:3000/api/userToDos/${index}`,
-    //     {
-    //       method: "DELETE",
-    //     }
-    //   );
-    //   return response.json();
-    // }
-    // updateDelete();
+    //This deletes but index needs setting to the ID
+  //   async function updateDelete(id) {
+  //     console.log("todo", id)
+  //     const response = await fetch(
+  //       `http://localhost:3001/api/userToDos/${id}`,
+  //       {
+  //         method: "DELETE",
+  //       }
+  //     );
+  //     return response.json();
+  //   }
+  //   updateDelete(id);
   }
 
   // function handleDeleteClick(index) {
@@ -67,6 +69,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
+      <QuoteGenerator />
       <body>
         <InputForm
           list_data={listDataState}
