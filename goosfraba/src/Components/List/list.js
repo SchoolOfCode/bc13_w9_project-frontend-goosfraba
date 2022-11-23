@@ -21,8 +21,8 @@ function ListItems({
 }) {
   return (
 
-    <div className="listContainer">
-      <div >
+    
+      
         <tr className="items">
           <td
             key={key}
@@ -36,16 +36,19 @@ function ListItems({
             id={id}
           >
             {title}
-            <ListButtons
-              handleDeleteClick={handleDeleteClick}
-              to_do_id={to_do_id}
-              handleDoneClick={handleDoneClick}
-              id={id}
-            />
+            
           </td>
+            <td>
+              <ListButtons 
+                handleDeleteClick={handleDeleteClick}
+                to_do_id={to_do_id}
+                handleDoneClick={handleDoneClick}
+                id={id}
+            /></td>
+
         </tr>
-      </div>
-    </div>
+      
+    
   );
 }
 

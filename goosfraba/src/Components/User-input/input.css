@@ -10,7 +10,7 @@ div {
   background-color: #0c1821;
 }
 
-.inputField {
+.inputForm {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

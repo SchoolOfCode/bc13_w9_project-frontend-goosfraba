@@ -11,23 +11,32 @@
 .items {
   max-height: 30vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: typewriter;
   background-color: rgb(170, 170, 170);
   height: 100px;
-  width: 90%;
+  width: 95%;
   border-radius: 70px;
   position: relative;
-  left: 10px;
-  top: 10px;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  margin: 5px;
 }
 
 .listContainer {
-  background-color: #324a5f;
-  width: 900px;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fd0404;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  
+  
 }

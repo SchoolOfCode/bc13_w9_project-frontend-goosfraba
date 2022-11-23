@@ -65,18 +65,20 @@ function App() {
   console.log(listDataState);
 
   return (
-    <div className="App">
+    <html className="html">
       <header className="header"><img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" /><span className="title">Goosfraba</span>
         <p className="clean">Keeping Code Clean</p></header>
-      <body>
+      <body className="body">
 
-        <InputForm
-          list_data={listDataState}
-          list_data_state={setListDataState}
+        
+          <InputForm
+            list_data={listDataState}
+            list_data_state={setListDataState}
         />
-        <table>
+        
+        <table className="listContainer">
           {listDataState.map((list, index) => (
-            <ListItems className="listContainer"
+            <ListItems 
               // need to check this. Currently not working properly.
               //key={uuidv4()}
               title={list.to_do_title}
@@ -96,7 +98,7 @@ function App() {
           ))}
         </table>
       </body>
-    </div>
+    </html>
   );
 }
 export default App;
