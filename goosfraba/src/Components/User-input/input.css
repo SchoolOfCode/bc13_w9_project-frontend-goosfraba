@@ -3,17 +3,15 @@
   padding: 0;
 }
 
-div {
-  font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: typewriter;
-  background-color: #0c1821;
-}
-
 .inputForm {
   display: flex;
+  position: relative;
+  left: 10%;
+  width: 80%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  padding-bottom: 2%;
+  background-color: #0c1821;
 }
 
 input {
@@ -40,6 +38,9 @@ button {
   font-family: typewriter;
   font-size: 55px;
   border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
 }
 
 .add {
@@ -88,4 +89,8 @@ button {
 .add:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.inputTodo {
+  
 }

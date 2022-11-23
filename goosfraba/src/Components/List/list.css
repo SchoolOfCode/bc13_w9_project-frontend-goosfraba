@@ -17,14 +17,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: typewriter;
-  background-color: rgb(170, 170, 170);
+  background-color: #e1e1e1;
   height: 100px;
   width: 95%;
   border-radius: 70px;
   position: relative;
   left: 5px;
   right: 5px;
-  top: 5px;
+  top: 5px; 
   bottom: 5px;
   margin: 5px;
 }
@@ -32,11 +32,19 @@
 .listContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
+  left: 10%;
   align-items: center;
-  background-color: #fd0404;
-  width: 100%;
+  width: 80%;
   height: 100%;
-  padding: 20px;
-  
-  
+  padding-bottom: 20px;
+  border-radius: 20px;
+  padding-top: 20px;
+  background-color: #388bcb;
+}
+
+
+.toDoTitle {
+  padding-left: 20px;
+  color: black;
 }
