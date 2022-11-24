@@ -19,7 +19,7 @@ function QuoteGenerator() {
   }, []);
 
   return (
-    <div>
+    <div className="quote">
       <h2>{quotes}</h2>
       <h3>{author}</h3>
     </div>

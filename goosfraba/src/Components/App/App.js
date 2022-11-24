@@ -6,6 +6,7 @@ import React from "react";
 import InputForm from "../User-input/InputForm";
 // import Todo from '../User-input/Todo';
 import QuoteGenerator from "../Quotes-generator/quote";
+import Links from "../Links/links"
 
 
 function App() {
@@ -93,9 +94,11 @@ function App() {
         <hr />
         <p className="clean">keeping code clean</p>
       </header>
+
       <h3 className="quote">
         <QuoteGenerator />
       </h3>
+
       <body className="body">
 
         <InputForm
@@ -127,6 +130,7 @@ function App() {
           ))}
         </table>
       </body>
+      <Links />
     </html>
   );
 }
