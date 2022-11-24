@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 //import Input from "./input";
 import { v4 as uuidv4 } from "uuid";
 import ListItems from "../List/list";
@@ -8,7 +8,7 @@ import "./input.css"
 function InputForm({ list_data, list_data_state }) {
   const [inputValue, setInputValue] = useState("");
   const [priority, setPriority] = useState(1);
-  const inputText = useRef();
+  
 
   function handleChange(event) {
     let newInputValue = event.target.value;
@@ -40,9 +40,10 @@ function InputForm({ list_data, list_data_state }) {
         },
       ]);
     }
-    inputText.current.value = null;
     
-    // addNewTodo();
+    setInputValue("");
+    
+    
   }
 
 //   async function addNewTodo() {
@@ -60,8 +61,8 @@ function InputForm({ list_data, list_data_state }) {
 //   }
 
   return (
-    <form className="inputForm">
-      <input ref={inputText} className="inputTodo" onChange={handleChange} placeholder="Add-to-do..."></input>
+    <form onSubmit={handleClick} className="inputForm">
+      <input className="inputTodo" value={inputValue} onChange={handleChange} placeholder="Add-to-do..."></input>
 
       <label htmlFor="priority"></label>
       <select className="dropdown"
@@ -77,7 +78,7 @@ function InputForm({ list_data, list_data_state }) {
         <option value="2">Medium</option>
         <option value="3">Low</option>
       </select>
-      <button className="add" onClick={handleClick}>Add To-Do!</button>
+      <input type="submit" className="add" value="Add to do" />
     </form>
   );
 }
