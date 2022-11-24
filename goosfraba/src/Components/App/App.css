@@ -39,6 +39,9 @@ html {
 
 .body{
   background-color: #0c1821;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
 }
 
 
@@ -49,9 +52,11 @@ html {
   position: relative;
   display: flex;
   align-items: flex-start;
-  padding-left: 1%;
-  padding-top: 1%;
-    
+  padding-left: 0%;
+  padding-top: 0%;
+  left: 3%;
+  top: 50px;
+
 }
 
 .title {
@@ -62,7 +67,7 @@ html {
 
 h1{
   position: relative;
-  top: -15vh;
+  top: -12vh;
   text-align: center;
   justify-content: center;
   font-size: 100px;
@@ -75,7 +80,7 @@ h1{
   justify-content: center;
   position: relative;
   text-align: center;
-  top: -15vh;
+  top: -12vh;
   text-align: center;
   font-size: 40px;
   padding-bottom: 20px;
@@ -94,4 +99,24 @@ h1{
   padding-bottom: 10px;
   width: 80%;
   left: 10%;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: App-logo-spin infinite 15s ;
+    animation-duration: 5s;
+    
+    
+    
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
