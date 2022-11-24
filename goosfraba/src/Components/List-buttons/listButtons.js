@@ -10,7 +10,7 @@ function ListButtons({ handleDeleteClick, to_do_id, handleDoneClick, id }) {
       <button id="Buttons" className="editB"><img id="img" src="/Pictures/editButton.png" alt="edit Button" /></button>
       <button id="Buttons" className="tickB"
         onClick={() => {
-          handleDoneClick(to_do_id);
+          handleDoneClick(id);
         }}
       ><img id="img" src="/Pictures/tickButton.png" alt="done Button" />
 

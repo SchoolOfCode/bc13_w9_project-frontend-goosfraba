@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 //import Input from "./input";
 import { v4 as uuidv4 } from "uuid";
 import ListItems from "../List/list";
@@ -8,6 +8,7 @@ import "./input.css"
 function InputForm({ list_data, list_data_state }) {
   const [inputValue, setInputValue] = useState("");
   const [priority, setPriority] = useState(1);
+  const inputText = useRef();
 
   function handleChange(event) {
     let newInputValue = event.target.value;
@@ -19,15 +20,18 @@ function InputForm({ list_data, list_data_state }) {
     setPriority(selectedPriority);
   }
 
-  function handleClick() {
+  function handleClick(e) {
+    e.preventDefault();
+    
     let addedTodo = inputValue;
+    
     if (inputValue !== "") {
       list_data_state([
         ...list_data,
         {
-          //to_do_id: uuidv4(), //primary key
+          todo_id: uuidv4(), //primary key
+          user_todo_id: 1, //foreign key
           to_do_title: addedTodo,
-          user_id: 1, //foreign key
           done: false,
           priority: priority,
           // date_created: 20221122,
@@ -36,26 +40,28 @@ function InputForm({ list_data, list_data_state }) {
         },
       ]);
     }
-    addNewTodo();
+    inputText.current.value = null;
+    
+    // addNewTodo();
   }
 
-  async function addNewTodo() {
-    let addedTodo = inputValue;
-    const response = await fetch("http://localhost:3001/api/userToDos", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      payload: {
-        to_do_title: addedTodo,
-        user_id: 1, //foreign key
-        done: false,
-        priority: 1,
-      },
-    });
-  }
+//   async function addNewTodo() {
+//     let addedTodo = inputValue;
+//     const response = await fetch("http://localhost:3001/api/userToDos", {
+//       method: "POST",
+//       headers: { "Content-type": "application/json" },
+//       payload: {
+//         to_do_title: addedTodo,
+//         user_id: 1, //foreign key
+//         done: false,
+//         priority: 1,
+//       },
+//     });
+//   }
 
   return (
-    <div className="inputForm">
-      <input className="inputTodo" onChange={handleChange} placeholder="Add-to-do..."></input>
+    <form className="inputForm">
+      <input ref={inputText} className="inputTodo" onChange={handleChange} placeholder="Add-to-do..."></input>
 
       <label htmlFor="priority"></label>
       <select className="dropdown"
@@ -72,7 +78,7 @@ function InputForm({ list_data, list_data_state }) {
         <option value="3">Low</option>
       </select>
       <button className="add" onClick={handleClick}>Add To-Do!</button>
-    </div>
+    </form>
   );
 }
 

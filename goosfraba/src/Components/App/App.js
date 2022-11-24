@@ -46,6 +46,7 @@ function App() {
   //     return response.json();
   //   }
   //   updateDelete(id);
+  console.log("this is delete button",listDataState[index].done);
   }
 
   // function handleDeleteClick(index) {
@@ -57,15 +58,31 @@ function App() {
   // }
 
   // Take a look at the delete buttons, only work from the bottom up
-
+  const [doneState, setDoneState] = useState("toDoTitle");
   function handleDoneClick(index) {
+    
     setListDataState([
       ...listDataState.slice(0, index),
       { ...listDataState[index], done: !listDataState[index].done },
       ...listDataState.slice(index + 1),
     ]);
+
+    // if(listDataState[index].done === true){
+    //   const newState = "toDoTitleDone"
+    //   setDoneState(newState)
+    // } 
+    
+    // if(listDataState[index].done === false){
+    //   const newState = "toDoTitle"
+    //   setDoneState(newState)
+    // }
+
+    
+
+    console.log("this is DONE button", listDataState);
   }
-  console.log(listDataState);
+
+  
 
   return (
 
@@ -77,10 +94,7 @@ function App() {
         <p className="clean">keeping code clean</p>
       </header>
       <h3 className="quote">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
+        <QuoteGenerator />
       </h3>
       <body className="body">
 
@@ -94,6 +108,8 @@ function App() {
             <ListItems
               // need to check this. Currently not working properly.
               //key={uuidv4()}
+              listDataState={listDataState}
+              doneState={doneState}
               title={list.to_do_title}
               to_do_id={list.to_do_id}
               user_id={list.user_id}

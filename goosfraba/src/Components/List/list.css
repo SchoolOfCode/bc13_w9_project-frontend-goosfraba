@@ -50,7 +50,20 @@
 }
 
 
-.toDoTitle {
+#toDoTitle {
   padding-left: 20px;
   color: black;
+}
+
+#toDoTitleDone{
+  padding-left: 20px;
+  color: black;
+  text-decoration: line-through;
+  text-decoration-thickness: 5px;
+  
+  
+  
+  
+  
+  
 }
