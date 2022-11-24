@@ -54,8 +54,8 @@ function InputForm({ list_data, list_data_state }) {
   }
 
   return (
-    <div className="inputField">
-      <input onChange={handleChange} placeholder="Add-to-do..."></input>
+    <div className="inputForm">
+      <input className="inputTodo" onChange={handleChange} placeholder="Add-to-do..."></input>
 
       <label htmlFor="priority"></label>
       <select className="dropdown"

@@ -11,23 +11,46 @@
 .items {
   max-height: 30vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
   font-family: typewriter;
-  background-color: rgb(170, 170, 170);
+  background-color: #e1e1e1;
   height: 100px;
-  width: 90%;
+  width: 95%;
   border-radius: 70px;
   position: relative;
-  left: 10px;
-  top: 10px;
+  left: 5px;
+  right: 5px;
+  top: 5px; 
+  bottom: 5px;
+  margin: 15px;
+  box-shadow: 1px 1px 0px #505050,
+    2px 2px 0px #505050,
+    3px 3px 0px #505050,
+    4px 4px 0px #505050,
+    5px 5px 0px #505050,
+    6px 6px 0px #505050;
 }
 
 .listContainer {
-  background-color: #324a5f;
-  width: 900px;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 10%;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  padding-top: 20px;
+  background-color: #388bcb;
+}
+
+
+.toDoTitle {
+  padding-left: 20px;
+  color: black;
 }

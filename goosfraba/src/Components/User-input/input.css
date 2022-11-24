@@ -3,17 +3,16 @@
   padding: 0;
 }
 
-div {
-  font-size: calc(10px + 2vmin);
-  color: white;
-  font-family: typewriter;
-  background-color: #0c1821;
-}
-
-.inputField {
+.inputForm {
   display: flex;
+  /* position: relative; */
+  left: 10%;
+  width: 80%;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  
+  padding-bottom: 2%;
+  background-color: #0c1821;
 }
 
 input {
@@ -22,14 +21,16 @@ input {
   font-size: 55px;
   font-family: typewriter;
   border-radius: 6px;
-  position: relative;
-  left: 40px;
+  /* position: relative; */
+  
+  
+  /* left: 40px; */
 }
 button {
   border-radius: 6px;
   width: 450px;
   height: 70px;
-  position: relative;
+  /* position: relative; */
   right: 40px;
 }
 
@@ -40,6 +41,9 @@ button {
   font-family: typewriter;
   font-size: 55px;
   border-radius: 6px;
+  /* display: flex;
+  justify-content: center; */
+  /* gap: 100px; */
 }
 
 .add {
@@ -53,7 +57,7 @@ button {
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   font-family: "JetBrains Mono", monospace;
   height: 70px;
   justify-content: center;
@@ -62,7 +66,7 @@ button {
   overflow: hidden;
   /* padding-left: 16px;
   padding-right: 16px; */
-  position: relative;
+  /* position: relative; */
   text-align: left;
   text-decoration: none;
   transition: box-shadow 0.15s, transform 0.15s;
@@ -88,4 +92,8 @@ button {
 .add:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.inputTodo {
+  display: flex;
 }
