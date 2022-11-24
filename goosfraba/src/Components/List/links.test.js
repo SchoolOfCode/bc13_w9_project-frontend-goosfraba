@@ -7,7 +7,7 @@ test("Pictures are loading", () => {
   const links = screen.getAllByRole("img")
   expect(links).toReturn(7);
 });
-
+// pushung test
 // test("should navigate to react when link is clicked", () => {
 //   const { getByTestId } = render(<a data-testid="react-link" href=“https://reactjs.org/”></a>);
 //   expect(getByTestId("react-link")).toHaveAttribute("href", "https://reactjs.org/");
