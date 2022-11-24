@@ -1,5 +1,17 @@
 
 .links-logo{
-    width: 150px;
-    height: 150px;
+    width: 75px;
+    height: 75px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    left: 10%;
+    width: 80%;
+    padding-top: 10px;
+    bottom: 0;
+    overflow: auto;
+    background-color: #0c1821;
 }

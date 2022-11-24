@@ -91,7 +91,7 @@ function App() {
       <img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" />
       <header className="header">
         <h1 className="title">G o o s f r a b a</h1>
-        <hr />
+        <hr className="hr"/>
         <p className="clean">keeping code clean</p>
       </header>
 

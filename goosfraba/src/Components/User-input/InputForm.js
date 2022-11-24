@@ -69,8 +69,8 @@ function InputForm({ list_data, list_data_state }) {
         onChange={(e) => {
           prioritySelector(e);
         }}
-        name="priority"
-        id="priority"
+        // name="priority"
+        // id="priority"
       >
         <option value="">Select Priority</option>
         <option value="1">Top</option>
