@@ -4,7 +4,7 @@ function Links() {
 
   return (
     <footer className="footer">
-        <p className="links">
+        {/* <p className="links"> */}
         <a data-testid="react-link" target="_blank" rel="noreferrer" href="https://reactjs.org/">
             <img className="links-logo" src="/Pictures/react-logo.png" alt="react"/>
         </a>
@@ -26,7 +26,7 @@ function Links() {
         <a data-testid="SoC-link" target="_blank" rel="noreferrer" href="https://www.schoolofcode.com/">
             <img className="links-logo" src="/Pictures/soc-logo.png" alt="soc"/>
         </a>
-        </p>
+        {/* </p> */}
     </footer>
   );
 }

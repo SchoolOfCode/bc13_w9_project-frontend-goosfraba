@@ -18,32 +18,62 @@ function ListItems({
   handleDeleteClick,
   handleDoneClick,
   id,
-}) {
-  return (
-    <tr className="items">
-      <td
-        key={key}
-        to_do_id={to_do_id}
-        user_id={user_id}
-        done={done}
-        priority={priority}
-        date_created={date_created}
-        date_completed={date_completed}
-        due_date={due_date}
-        id={id}
+  doneState,
+  
+})  { 
+    if(done === false){
+      return (
+      <tr className="items" id="toDoTitle">
+        <td
+          key={key}
+          to_do_id={to_do_id}
+          user_id={user_id}
+          done={done}
+          priority={priority}
+          date_created={date_created}
+          date_completed={date_completed}
+          due_date={due_date}
+          id={id}
       >
-        <span className="toDoTitle">{title}</span>
-      </td>
-      <td>
-        <ListButtons
+          <span className={doneState}>{title}</span>
+        </td>
+        <td>
+          <ListButtons
           handleDeleteClick={handleDeleteClick}
           to_do_id={to_do_id}
           handleDoneClick={handleDoneClick}
           id={id}
         />
-      </td>
-    </tr>
-  );
+        </td>
+      </tr>
+  );} 
+  
+  if (done === true){
+    return (
+      <tr className="items" id="toDoTitleDone">
+        <td
+          key={key}
+          to_do_id={to_do_id}
+          user_id={user_id}
+          done={done}
+          priority={priority}
+          date_created={date_created}
+          date_completed={date_completed}
+          due_date={due_date}
+          id={id}
+        >
+          <span className={doneState}>{title}</span>
+        </td>
+        <td>
+          <ListButtons
+            handleDeleteClick={handleDeleteClick}
+            to_do_id={to_do_id}
+            handleDoneClick={handleDoneClick}
+            id={id}
+          />
+        </td>
+      </tr>
+    );}
 }
 
 export default ListItems;
