@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 
 /**
- * This function brings a random quote from a chosen API 
+ * Importing { useEffect, useState } from React
+ * This function brings a random quote from a chosen API ("https://type.fit/api/quotes")
+ * The setAuthor and the setQuotes are updates with the response of the API
+ * Two useStates are used; one for Author and one for Quotes 
  * @returns the random quote and the author
  */
 
