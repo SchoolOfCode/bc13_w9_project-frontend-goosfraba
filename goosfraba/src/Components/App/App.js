@@ -10,7 +10,7 @@ import Links from '../Links/links';
 
 /**
  * Imports needed:
- * CSS (style), useState, useEffect, React (from react), ListItems (component), InputForm (component), QuoteGenerator (component), Links (component) 
+ * CSS (style), useState, useEffect, React (from react), ListItems (component), InputForm (component), QuoteGenerator (component), Links (component)
  * Includes functions: getToDos, handleDeleteClick, handleDoneClick
  * @returns components: QuoteGenerator, InputForm, ListItems, Links
  */
@@ -82,7 +82,7 @@ function App() {
     //   const newState = "toDoTitleDone"
     //   setDoneState(newState)
     // }
-
+    
     // if(listDataState[index].done === false){
     //   const newState = "toDoTitle"
     //   setDoneState(newState)
