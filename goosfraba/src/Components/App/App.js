@@ -1,14 +1,17 @@
-import "./App.css";
-import ListItems from "../List/list";
+import './App.css';
+import ListItems from '../List/list';
 //import { v4 as uuidv4 } from "uuid";
-import { useState, useEffect } from "react";
-import React from "react";
-import InputForm from "../User-input/InputForm";
+import { useState, useEffect } from 'react';
+import React from 'react';
+import InputForm from '../User-input/InputForm';
 // import Todo from '../User-input/Todo';
-import QuoteGenerator from "../Quotes-generator/quote";
-import Links from "../Links/links"
+import QuoteGenerator from '../Quotes-generator/quote';
+import Links from '../Links/links';
 
-
+/**
+ * Includes functions: getToDos, handleDeleteClick, handleDoneClick
+ * @returns components: QuoteGenerator, InputForm, ListItems, Links
+ */
 function App() {
   //make a state
   //const [todos, setTodos] = useState([]);
@@ -18,8 +21,8 @@ function App() {
   // hand the result to our listdatastate
   useEffect(() => {
     async function getToDos() {
-      const response = await fetch("http://localhost:3001/api/userToDos", {
-        headers: { accept: "application/json" },
+      const response = await fetch('http://localhost:3001/api/userToDos', {
+        headers: { accept: 'application/json' },
       });
       const data = await response.json();
       console.log(data);
@@ -28,26 +31,31 @@ function App() {
     getToDos();
   }, []);
 
-  //handle delete function
-  //needs to take an id
+  /**
+   * Updates the setState by deleting an item from the list finding it with its id
+   * Handle delete function
+   * Needs to take an id
+   * @param {number} index Position in the array
+   * @param {number} id Id of the ToDo to delete
+   */
   function handleDeleteClick(index, id) {
     setListDataState([
       ...listDataState.slice(0, index),
       ...listDataState.slice(index + 1),
     ]);
     //This deletes but index needs setting to the ID
-  //   async function updateDelete(id) {
-  //     console.log("todo", id)
-  //     const response = await fetch(
-  //       `http://localhost:3001/api/userToDos/${id}`,
-  //       {
-  //         method: "DELETE",
-  //       }
-  //     );
-  //     return response.json();
-  //   }
-  //   updateDelete(id);
-  console.log("this is delete button",listDataState[index].done);
+    //   async function updateDelete(id) {
+    //     console.log("todo", id)
+    //     const response = await fetch(
+    //       `http://localhost:3001/api/userToDos/${id}`,
+    //       {
+    //         method: "DELETE",
+    //       }
+    //     );
+    //     return response.json();
+    //   }
+    //   updateDelete(id);
+    console.log('this is delete button', listDataState[index].done);
   }
 
   // function handleDeleteClick(index) {
@@ -59,9 +67,13 @@ function App() {
   // }
 
   // Take a look at the delete buttons, only work from the bottom up
-  const [doneState, setDoneState] = useState("toDoTitle");
+  const [doneState, setDoneState] = useState('toDoTitle');
+  /**
+   * Updates the setState by crossing an item as done from the list finding it with its id
+   * Handle done function
+   * @param {number} index The position of the item in the array
+   */
   function handleDoneClick(index) {
-    
     setListDataState([
       ...listDataState.slice(0, index),
       { ...listDataState[index], done: !listDataState[index].done },
@@ -71,27 +83,21 @@ function App() {
     // if(listDataState[index].done === true){
     //   const newState = "toDoTitleDone"
     //   setDoneState(newState)
-    // } 
-    
+    // }
+
     // if(listDataState[index].done === false){
     //   const newState = "toDoTitle"
     //   setDoneState(newState)
     // }
-
-    
-
-    console.log("this is DONE button", listDataState);
+    console.log('this is DONE button', listDataState);
   }
 
-  
-
   return (
-
     <html className="html">
       <img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" />
       <header className="header">
         <h1 className="title">G o o s f r a b a</h1>
-        <hr className="hr"/>
+        <hr className="hr" />
         <p className="clean">keeping code clean</p>
       </header>
 
@@ -100,7 +106,6 @@ function App() {
       </h3>
 
       <body className="body">
-
         <InputForm
           list_data={listDataState}
           list_data_state={setListDataState}

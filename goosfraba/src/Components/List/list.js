@@ -4,7 +4,10 @@
 // component in the app
 import ListButtons from "../List-buttons/listButtons.js";
 import "./list.css";
-
+/**
+ * This function takes the props of each item on the list
+ * @returns the items in the ToDo list, with their Done and Delete buttons next to them 
+ */
 function ListItems({
   key,
   title,

@@ -1,5 +1,10 @@
 import "./links.css";
 
+
+/**
+ * This function is the footer, where the quick links are
+ * @returns The seven images with their links, open in new tab when clicked (React, w3Schools, CodeWars, npm, FreeCodeCamp, GitHub, SoC)
+ */
 function Links() {
 
   return (
