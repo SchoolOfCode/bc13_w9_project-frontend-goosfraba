@@ -2,6 +2,10 @@
 // Need three buttons
 import "./listButtons.css"
 
+/**
+ * This function adds the functions to their respective buttons 
+ * @returns the buttons with their functionality of deleting and crossing out, also adds an image to each button
+ */
 
 function ListButtons({ handleDeleteClick, to_do_id, handleDoneClick, id }) {
   return (

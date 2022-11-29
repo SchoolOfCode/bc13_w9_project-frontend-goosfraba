@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+/**
+ * This function brings a random quote from a chosen API 
+ * @returns the random quote and the author
+ */
+
+
+
 function QuoteGenerator() {
   const [quotes, setQuotes] = useState('');
   const [author, setAuthor] = useState('');
@@ -10,7 +17,7 @@ function QuoteGenerator() {
         headers: { accept: 'application/json' },
       });
       const data = await response.json();
-      if(data[random].author !== null) {
+      if (data[random].author !== null) {
         setAuthor(data[random].author);
       }
       setQuotes(data[random].text);
