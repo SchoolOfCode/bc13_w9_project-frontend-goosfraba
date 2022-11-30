@@ -6,8 +6,7 @@ import React from "react";
 import InputForm from "../User-input/InputForm";
 // import Todo from '../User-input/Todo';
 import QuoteGenerator from "../Quotes-generator/quote";
-import Links from "../Links/links"
-
+import Links from "../Links/links";
 
 function App() {
   //make a state
@@ -36,18 +35,18 @@ function App() {
       ...listDataState.slice(index + 1),
     ]);
     //This deletes but index needs setting to the ID
-  //   async function updateDelete(id) {
-  //     console.log("todo", id)
-  //     const response = await fetch(
-  //       `http://localhost:3001/api/userToDos/${id}`,
-  //       {
-  //         method: "DELETE",
-  //       }
-  //     );
-  //     return response.json();
-  //   }
-  //   updateDelete(id);
-  console.log("this is delete button",listDataState[index].done);
+    //   async function updateDelete(id) {
+    //     console.log("todo", id)
+    //     const response = await fetch(
+    //       `http://localhost:3001/api/userToDos/${id}`,
+    //       {
+    //         method: "DELETE",
+    //       }
+    //     );
+    //     return response.json();
+    //   }
+    //   updateDelete(id);
+    console.log("this is delete button", listDataState[index].done);
   }
 
   // function handleDeleteClick(index) {
@@ -61,7 +60,6 @@ function App() {
   // Take a look at the delete buttons, only work from the bottom up
   const [doneState, setDoneState] = useState("toDoTitle");
   function handleDoneClick(index) {
-    
     setListDataState([
       ...listDataState.slice(0, index),
       { ...listDataState[index], done: !listDataState[index].done },
@@ -71,27 +69,22 @@ function App() {
     // if(listDataState[index].done === true){
     //   const newState = "toDoTitleDone"
     //   setDoneState(newState)
-    // } 
-    
+    // }
+
     // if(listDataState[index].done === false){
     //   const newState = "toDoTitle"
     //   setDoneState(newState)
     // }
 
-    
-
     console.log("this is DONE button", listDataState);
   }
 
-  
-
   return (
-
     <html className="html">
       <img className="logo" src="/Pictures/GoosLogo.png" alt="Logo" />
       <header className="header">
         <h1 className="title">G o o s f r a b a</h1>
-        <hr className="hr"/>
+        <hr className="hr" />
         <p className="clean">keeping code clean</p>
       </header>
 
@@ -100,13 +93,12 @@ function App() {
       </h3>
 
       <body className="body">
-
         <InputForm
           list_data={listDataState}
           list_data_state={setListDataState}
         />
 
-        <table className="listContainer">
+        <table className="listContainer" data-testid="listcontainer">
           {listDataState.map((list, index) => (
             <ListItems
               // need to check this. Currently not working properly.
