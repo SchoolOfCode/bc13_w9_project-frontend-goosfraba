@@ -15,6 +15,7 @@ function Links() {
         href="https://reactjs.org/"
       >
         <img
+          data-testid="logo-img"
           className="links-logo"
           src="/Pictures/react-logo.png"
           alt="react"
@@ -27,6 +28,7 @@ function Links() {
         href="https://www.w3schools.com/"
       >
         <img
+          data-testid="logo-img"
           className="links-logo"
           src="/Pictures/w3schools-logo.png"
           alt="w3schools"
@@ -39,6 +41,7 @@ function Links() {
         href="https://www.codewars.com/dashboard"
       >
         <img
+        data-testid="logo-img"
           className="links-logo"
           src="/Pictures/codewars-logo.png"
           alt="codewars"
@@ -50,7 +53,7 @@ function Links() {
         rel="noreferrer"
         href="https://www.npmjs.com/"
       >
-        <img className="links-logo" src="/Pictures/npm-logo.png" alt="npm" />
+        <img data-testid="logo-img" className="links-logo" src="/Pictures/npm-logo.png" alt="npm" />
       </a>
       <a
         data-testid="freeCodeCamp-link"
@@ -59,6 +62,7 @@ function Links() {
         href="https://www.freecodecamp.org/"
       >
         <img
+        data-testid="logo-img"
           className="links-logo"
           src="/Pictures/freecodecamp-logo.png"
           alt="freecodecamp"
@@ -71,6 +75,7 @@ function Links() {
         href="https://github.com/"
       >
         <img
+        data-testid="logo-img"
           className="links-logo"
           src="/Pictures/github-logo.png"
           alt="github"
@@ -82,7 +87,7 @@ function Links() {
         rel="noreferrer"
         href="https://www.schoolofcode.com/"
       >
-        <img className="links-logo" src="/Pictures/soc-logo.png" alt="soc" />
+        <img data-testid="logo-img" className="links-logo" src="/Pictures/soc-logo.png" alt="soc" />
       </a>
     </footer>
   );
