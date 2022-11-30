@@ -15,10 +15,11 @@ import './listButtons.css';
 function ListButtons({ handleDeleteClick, to_do_id, handleDoneClick, id }) {
   return (
     <section>
-      <button id="Buttons" className="editB">
+      <button id="Buttons" data-testid="editB" className="editB">
         <img id="img" src="/Pictures/editButton.png" alt="edit Button" />
       </button>
       <button
+        data-testid="doneB"
         id="Buttons"
         className="tickB"
         onClick={() => {
@@ -28,6 +29,7 @@ function ListButtons({ handleDeleteClick, to_do_id, handleDoneClick, id }) {
         <img id="img" src="/Pictures/tickButton.png" alt="done Button" />
       </button>
       <button
+        data-testid="deleteB"
         id="Buttons"
         className="delB"
         onClick={() => {

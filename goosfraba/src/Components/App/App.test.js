@@ -13,4 +13,5 @@ describe('Goosfraba home contains all the elements', () => {
 //     const logos = screen.getByTestId('links-logo');
 //     expect(logos.length).toBe(7);
 //   });
+// This one is not working ^^
 });
