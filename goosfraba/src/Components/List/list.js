@@ -43,7 +43,10 @@ function ListItems({
   handleDoneClick,
   id,
   doneState,
+  listDataState
 })  { 
+    // console.log("This is the OBJECT", listDataState);
+    // console.log("This is the TITLE", title);
     if(done === false){
       return (
       <tr className="items" id="toDoTitle">
@@ -58,7 +61,7 @@ function ListItems({
           due_date={due_date}
           id={id}
       >
-          <span className={doneState}>{title}</span>
+          <p>{title}</p>
         </td>
         <td>
           <ListButtons
@@ -85,7 +88,7 @@ function ListItems({
           due_date={due_date}
           id={id}
         >
-          <span className={doneState}>{title}</span>
+          {title}
         </td>
         <td>
           <ListButtons

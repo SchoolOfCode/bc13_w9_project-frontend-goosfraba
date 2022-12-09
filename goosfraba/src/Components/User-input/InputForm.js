@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import Input from "./input";
 import { v4 as uuidv4 } from "uuid";
-import ListItems from "../List/list";
+// import ListItems from "../List/list";
 import "./input.css"
 
 
@@ -67,26 +67,42 @@ function InputForm({ list_data, list_data_state }) {
           // due_date: 20221122,
         },
       ]);
-    }
+    
+      const response = async () => { await fetch("http://localhost:3001/api/userToDos", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          user_todo_id: 1,
+          to_do_title: addedTodo,
+          user_id: 1, //foreign key
+          done: false,
+          priority: priority,
+        }),
+      })};
+      response();
+
+  }
 
     setInputValue("");
 
 
   }
 
-  //   async function addNewTodo() {
-  //     let addedTodo = inputValue;
-  //     const response = await fetch("http://localhost:3001/api/userToDos", {
-  //       method: "POST",
-  //       headers: { "Content-type": "application/json" },
-  //       payload: {
-  //         to_do_title: addedTodo,
-  //         user_id: 1, //foreign key
-  //         done: false,
-  //         priority: 1,
-  //       },
-  //     });
-  //   }
+    // async function addNewTodo() {
+    //   let addedTodo = inputValue;
+    //   const response = await fetch("http://localhost:3001/api/userToDos", {
+    //     method: "POST",
+    //     headers: { "Content-type": "application/json" },
+    //     payload: JSON.stringify({
+    //       to_do_title: addedTodo,
+    //       user_id: 1, //foreign key
+    //       done: false,
+    //       priority: 1,
+    //     }),
+    //   });
+
+
+    // }
 
   return (
     <form onSubmit={handleClick} className="inputForm">

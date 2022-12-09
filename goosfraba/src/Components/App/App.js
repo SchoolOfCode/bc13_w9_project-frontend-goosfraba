@@ -30,7 +30,8 @@ function App() {
         headers: { accept: 'application/json' },
       });
       const data = await response.json();
-      console.log(data);
+      // console.log("This is the DATA OBJECT", data);
+      // console.log("This is the DATA PAYLOAD OBJECT", data.payload);
       setListDataState(data.payload);
     }
     getToDos();
@@ -48,23 +49,23 @@ function App() {
       ...listDataState.slice(0, index),
       ...listDataState.slice(index + 1),
     ]);
-    //This deletes but index needs setting to the ID
-    //   async function updateDelete(id) {
-    //     console.log("todo", id)
-    //     const response = await fetch(
-    //       `http://localhost:3001/api/userToDos/${id}`,
-    //       {
-    //         method: "DELETE",
-    //       }
-    //     );
-    //     return response.json();
-    //   }
-    //   updateDelete(id);
+    // This deletes but index needs setting to the ID
+      async function updateDelete(id) {
+        console.log("todo", id)
+        const response = await fetch(
+          `http://localhost:3001/api/userToDos/${id}`,
+          {
+            method: "DELETE",
+          }
+        );
+        return response.json();
+      }
+      updateDelete(id);
   }
 
   // Take a look at the delete buttons, only work from the bottom up
   // setDoneState not being use:
-  const [doneState, setDoneState] = useState('toDoTitle');
+  
 
   /**
    * Updates the setState by crossing an item as done from the list finding it with its id
@@ -77,16 +78,23 @@ function App() {
       { ...listDataState[index], done: !listDataState[index].done },
       ...listDataState.slice(index + 1),
     ]);
-
-    // if(listDataState[index].done === true){
-    //   const newState = "toDoTitleDone"
-    //   setDoneState(newState)
-    // }
     
-    // if(listDataState[index].done === false){
-    //   const newState = "toDoTitle"
-    //   setDoneState(newState)
-    // }
+    const id = listDataState[index].todo_id;
+    console.log("this should be the ID ", id);
+    
+    const response = async () => { await fetch(`http://localhost:3001/api/userToDos/${id}`, {
+      method: "PATCH",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({
+        
+        done: !listDataState[index].done,
+        
+      }),
+    })};
+    
+    response();
+    
+    console.log("handleDoneClick STATE ", listDataState[index])
   }
 
   return (
@@ -114,7 +122,7 @@ function App() {
               // need to check this. Currently not working properly.
               //key={uuidv4()}
               listDataState={listDataState}
-              doneState={doneState}
+              
               title={list.to_do_title}
               to_do_id={list.to_do_id}
               user_id={list.user_id}
